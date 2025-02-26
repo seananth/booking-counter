@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Booking Counter",
+  "author": "Sean",
+  "version": "1.0",
+  "description": "Displays the number of people booked for each class at Hilti BJJ",
+  "permissions": ["webRequest"],
+  "host_permissions": ["*://hiltibjj.gymsystem.se/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://hiltibjj.gymsystem.se/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
